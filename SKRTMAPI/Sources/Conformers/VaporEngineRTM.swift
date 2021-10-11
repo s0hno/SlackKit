@@ -37,15 +37,15 @@ public class VaporEngineRTM: RTMWebSocket {
 
     public required init() {}
 
-    public func connect(url: URL, completionHandler: @escaping () -> Void) {
+    public func connect(url: URL) {
         guard let host = url.host else {
             fatalError("ERROR - Cannot extract host from '\(url.absoluteString)'")
         }
         
         let scheme: String = url.scheme == "wss" ? "wss" : "ws"
-        WebSocket.connect(scheme: scheme, host: host, port: 443, path: url.path, on: eventLoopGroup) { [weak self] ws in
+        let port = scheme == "wss" ? 443 : 80
+        WebSocket.connect(scheme: scheme, host: host, port: port, path: url.path, on: eventLoopGroup) { [weak self] ws in
             self?.didConnect(websocket: ws)
-            completionHandler()
         }
     }
 

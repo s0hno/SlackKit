@@ -35,11 +35,10 @@ public class StarscreamRTM: RTMWebSocket, WebSocketDelegate {
     public required init() {}
 
     // MARK: - RTM
-    public func connect(url: URL, completionHandler: @escaping () -> Void) {
+    public func connect(url: URL) {
         self.webSocket = WebSocket(request: URLRequest(url: url))
         self.webSocket?.delegate = self
         self.webSocket?.connect()
-        completionHandler()
     }
 
     public func disconnect() {

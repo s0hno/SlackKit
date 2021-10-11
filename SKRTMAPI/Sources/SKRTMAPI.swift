@@ -33,7 +33,7 @@ import SKWebAPI
 public protocol RTMWebSocket {
     init()
     var delegate: RTMDelegate? { get set }
-    func connect(url: URL, completionHandler: @escaping () -> Void)
+    func connect(url: URL)
     func disconnect()
     func sendMessage(_ message: String) throws
 }
@@ -137,10 +137,8 @@ public final class SKRTMAPI: RTMDelegate {
         else {
             return
         }
-        self.rtm.connect(url: url) { [weak self] in
-            guard let self = self else { return }
-            self.adapter?.initialSetup(json: response, instance: self)
-        }
+        self.rtm.connect(url: url)
+        self.adapter?.initialSetup(json: response, instance: self)
     }
 
     private func format(message: String,
