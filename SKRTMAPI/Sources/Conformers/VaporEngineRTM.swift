@@ -43,7 +43,7 @@ public class VaporEngineRTM: RTMWebSocket {
         }
         
         let scheme: String = url.scheme == "wss" ? "wss" : "ws"
-        WebSocket.connect(scheme: scheme, host: host, path: url.path, on: eventLoopGroup) { [weak self] ws in
+        WebSocket.connect(scheme: scheme, host: host, port: 443, path: url.path, on: eventLoopGroup) { [weak self] ws in
             self?.didConnect(websocket: ws)
             completionHandler()
         }
