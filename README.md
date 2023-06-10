@@ -1,20 +1,6 @@
-<p align="center"><img src="https://cloud.githubusercontent.com/assets/8311605/24083714/e921a0d4-0cb2-11e7-8384-d42113ef5056.png" alt="SlackKit" width="500"/></p>
+# **This library is no longer under active development.**
 
-[![Build Status](https://dev.azure.com/pzignego/SlackKit/_apis/build/status/pvzig.SlackKit?branchName=master)](https://dev.azure.com/pzignego/SlackKit/_build/latest?definitionId=2&branchName=master)
-
-![Swift Version](https://img.shields.io/badge/Swift-5-orange.svg)
-![Plaforms](https://img.shields.io/badge/Platforms-macOS,_iOS,_tvOS,_Linux-lightgrey.svg)
-![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen.svg)](https://cocoapods.org)
-
-## SlackKit: Slack Apps in Swift
-### Description
-
-SlackKit makes it easy to build Slack apps in Swift.
-
-It's intended to expose all of the functionality of Slack's [Real Time Messaging API](https://api.slack.com/rtm) as well as the [web APIs](https://api.slack.com/web) that are accessible to [bot users](https://api.slack.com/bot-users). SlackKit also supports Slack’s [OAuth 2.0](https://api.slack.com/docs/oauth) flow including the [Add to Slack](https://api.slack.com/docs/slack-button) and [Sign in with Slack](https://api.slack.com/docs/sign-in-with-slack) buttons, [incoming webhooks](https://api.slack.com/incoming-webhooks), [slash commands](https://api.slack.com/slash-commands), and [message buttons](https://api.slack.com/docs/message-buttons).
+## SlackKit
 
 ### Installation
 
@@ -150,11 +136,3 @@ Don’t need the whole banana? Want more control over the low-level implementati
 
 ### Examples
 You can find the source code for several example applications [here](https://github.com/pvzig/SlackKit/tree/master/Examples).
-
-### Tutorials
-- [Build a Slack Bot and Deploy to Heroku](https://medium.com/@pvzig/building-slack-bots-in-swift-b99e243e444c)
-
-### Get In Touch
-Twitter: [@pvzig](https://twitter.com/pvzig)
-
-Email: <peter@launchsoft.co>

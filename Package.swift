@@ -16,9 +16,9 @@ let package = Package(
         .library(name: "SKWebAPI", targets: ["SKWebAPI"])
     ],
     dependencies: [
-        .package(name: "Swifter", url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.5.0")),
-        .package(url: "https://github.com/vapor/websocket-kit", from: "2.14.0"),
-        .package(name: "Starscream", url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "4.0.4"))
+        .package(url: "https://github.com/httpswift/swifter", from: .init(1, 5, 0)),
+        .package(url: "https://github.com/vapor/websocket-kit", from: .init(2, 14, 0)),
+        .package(url: "https://github.com/daltoniam/Starscream", from: .init(4, 0, 4)),
     ],
     targets: [
         .target(name: "SlackKit",
@@ -38,7 +38,8 @@ let package = Package(
                 ],
                 path: "SKRTMAPI/Sources"),
         .target(name: "SKServer",
-                dependencies: ["SKCore", "SKWebAPI", "Swifter"],
+                dependencies: ["SKCore", "SKWebAPI",
+                    .product(name: "Swifter", package: "swifter")],
                 path: "SKServer/Sources"),
         .target(name: "SKWebAPI",
                 dependencies: ["SKCore"],
