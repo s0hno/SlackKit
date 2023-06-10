@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Swifter", url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.5.0")),
-        .package(url: "https://github.com/vapor/websocket-kit", from: "2.2.0"),
+        .package(url: "https://github.com/vapor/websocket-kit", from: "2.14.0"),
         .package(name: "Starscream", url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "4.0.4"))
     ],
     targets: [
