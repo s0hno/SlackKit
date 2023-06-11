@@ -43,8 +43,10 @@ public class VaporEngineRTM: RTMWebSocket {
             fatalError("ERROR - Cannot extract host from '\(url.absoluteString)'")
         }
         
+        let scheme: String = url.scheme == "wss" ? "wss" : "ws"
+        let port = scheme == "wss" ? 443 : 80
         futureWebsocket = WebSocketClient(eventLoopGroupProvider: .shared(eventLoopGroup))
-            .connect(scheme: url.scheme ?? "ws", host: host, port: 8080, path: url.path, query: nil, headers: [:]) { [weak self] webSocket in
+            .connect(scheme: url.scheme ?? "ws", host: host, port: port, path: url.path, query: nil, headers: [:]) { [weak self] webSocket in
                 self?.didConnect(websocket: webSocket)
             }
     }
